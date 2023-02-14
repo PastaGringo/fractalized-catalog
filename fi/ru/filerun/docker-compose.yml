@@ -5,7 +5,6 @@ services:
     volumes:
       - fractal-link-volume:/root/.local/share/caddy
   filerun_db:
-    container_name: filerun_db
     image: mariadb:10.1
     environment:
       MYSQL_ROOT_PASSWORD: your_mysql_root_password
