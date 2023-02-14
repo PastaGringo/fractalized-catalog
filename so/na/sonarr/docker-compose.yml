@@ -1,0 +1,34 @@
+version: '3.9'
+services:
+  link:
+    environment:
+      EXPOSE: sonarr:8989
+    volumes:
+      - fractal-link-volume:/root/.local/share/caddy
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      fractal-app-volume:/config
+#      - /path/to/tvseries:/tv #optional
+#      - /path/to/downloadclient-downloads:/downloads #optional
+#    ports:
+#      - 8989:8989
+#    restart: unless-stopped
+    healthcheck:
+      test: curl localhost:8989
+      interval: 10s
+      timeout: 10s
+      retries: 5
+	  
+volumes:
+  fractal-app-volume:
+    external: true
+    name: $APP_VOLUME_NAME
+  fractal-link-volume:
+    external: true
+    name: $LINK_VOLUME_NAME
