@@ -23,8 +23,7 @@ services:
       test: curl localhost:8989
       interval: 10s
       timeout: 10s
-      retries: 5
-	  
+      retries: 5  
 volumes:
   fractal-app-volume:
     external: true
