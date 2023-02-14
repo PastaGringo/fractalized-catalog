@@ -7,13 +7,12 @@ services:
       - fractal-link-volume:/root/.local/share/caddy
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
-    container_name: sonarr
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      fractal-app-volume:/config
+       - fractal-app-volume:/config
 #      - /path/to/tvseries:/tv #optional
 #      - /path/to/downloadclient-downloads:/downloads #optional
 #    ports:
@@ -23,7 +22,8 @@ services:
       test: curl localhost:8989
       interval: 10s
       timeout: 10s
-      retries: 5  
+      retries: 5
+	  
 volumes:
   fractal-app-volume:
     external: true
