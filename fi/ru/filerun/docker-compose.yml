@@ -36,7 +36,7 @@ services:
     volumes:
       - fractal-app-volume-filerun-html:/var/www/html
       - fractal-app-volume-filerun-files:/user-files
-	healthcheck:
+    healthcheck:
       test: curl localhost:80
       interval: 10s
       timeout: 10s
