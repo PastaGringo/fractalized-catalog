@@ -1,0 +1,15 @@
+name: "Sonarr" # FIXME
+version: "0.0"
+authors:
+  - "FIXME"
+repository: "https://hub.docker.com/r/linuxserver/sonarr"
+documentation: "https://github.com/Sonarr/Sonarr"
+description: "Sonarr is a PVR for Usenet and BitTorrent users."
+categories:
+  - P2P
+license: "GPLv3"
+screenshots:
+  - https://sonarr.tv/img/slider/seriesdetails.png
+  - https://sonarr.tv/img/slider/posters.png
+  - https://sonarr.tv/img/features/manualsearch.png
+logo: https://github.com/walkxcode/dashboard-icons/blob/main/png/sonarr.png?raw=true
