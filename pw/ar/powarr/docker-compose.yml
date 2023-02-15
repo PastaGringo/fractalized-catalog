@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  link:
+    environment:
+      EXPOSE: sonarr:8989
+    volumes:
+      - fractal-link-volume:/root/.local/share/caddy
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+       - fractal-app-volume:/config
+    healthcheck:
+      test: curl localhost:8989
+      interval: 10s
+      timeout: 10s
+      retries: 5
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:develop
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - fractal-app-volume-prowlarr:/config
+volumes:
+  fractal-app-volume:
+    external: true
+    name: $APP_VOLUME_NAME
+  fractal-app-volume-prowlarr:
+    external: true
+    name: $APP_VOLUME_NAME
+  fractal-link-volume:
+    external: true
+    name: $LINK_VOLUME_NAME
