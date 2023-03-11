@@ -18,7 +18,7 @@ services:
         - NIP05=enabled
       volumes:
         - fractal-app-volume:/usr/src/app/db
-    nostr-rs-relay-fractal-link:
+    link:
       container_name: nostr-rs-relay-fractal-link
       image: fractalnetworks/link:latest
       environment:
