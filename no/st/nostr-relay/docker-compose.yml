@@ -7,7 +7,7 @@ services:
         LINK_DOMAIN_DEFAULT: $LINK_DOMAIN_DEFAULT
     nostr-rs-relay-fractal:
       container_name: nostr-rs-relay-fractal
-      image: pastagringo/nostr-rs-relay-fractal
+      image: pastagringo/nostr-rs-relay-fractal:latest
       environment:
         - RELAY_URL=$LINK_DOMAIN_DEFAULT
         - NAME=custom-rs-nostr-relay
