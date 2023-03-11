@@ -2,33 +2,37 @@ version: '3.9'
 services:
 
     nginx:
-        image: pastagringo/nostr-relay-nginx-proxy:latest
-        environment:
-            LINK_DOMAIN_DEFAULT: $LINK_DOMAIN_DEFAULT
-    nostr-rs-relay:
-      container_name: nostr-rs-relay
-      image: scsibug/nostr-rs-relay:latest
+      image: pastagringo/nostr-relay-nginx-proxy:latest
+      environment:
+        LINK_DOMAIN_DEFAULT: $LINK_DOMAIN_DEFAULT
+    nostr-rs-relay-fractal:
+      container_name: nostr-rs-relay-fractal
+      image: pastagringo/nostr-rs-relay-fractal
+      environment:
+        - RELAY_URL=$LINK_DOMAIN_DEFAULT
+        - NAME=custom-rs-nostr-relay
+        - DESCRIPTION=Relay built with ENV vars!
+        - PUBKEY=myownpubkey
+        - CONTACT=contact@gmail.com
+        - PORT=8000
+        - NIP05=enabled
       volumes:
-        - /home/ubuntu/nostr/config.toml:/usr/src/app/config.toml
-        - /home/ubuntu/nostr/data:/usr/src/app/db
-      restart: always
-      #ports:
-      #  - 7000:8080
+        - fractal-app-volume:/usr/src/app/db
     link:
       image: fractalnetworks/link:latest
       environment:
         LINK: $LINK_DOMAIN_DEFAULT
         TOKEN: $LINK_TOKEN_DEFAULT
-        EXPOSE: nostr-rs-relay:8080
+        EXPOSE: nostr-rs-relay-fractal:8000
         FRACTAL_API: https://gateway.fractalnetworks.co
       cap_add:
         - NET_ADMIN
       volumes:
         - fractal-link-volume:/root/.local/share/caddy
 volumes:
-#  fractal-app-volume:
-#    external: true
-#    name: $APP_VOLUME_NAME
+  fractal-app-volume:
+    external: true
+    name: $APP_VOLUME_NAME
   fractal-link-volume:
     external: true
     name: $LINK_VOLUME_NAME
