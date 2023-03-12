@@ -7,14 +7,14 @@ services:
             LINK_DOMAIN_DEFAULT: $LINK_DOMAIN_DEFAULT        
     nostr-rs-relay-fractal:
       container_name: nostr-rs-relay-fractal
-      image: pastagringo/nostr-rs-relay-fractal:latest
+      image: pastagringo/nostr-relay-fractal:tagname
       environment:
         - RELAY_URL=$LINK_DOMAIN_DEFAULT
-        - NAME=custom-rs-nostr-relay
-        - DESCRIPTION=Relay built with ENV vars!
-        - PUBKEY=myownpubkey
-        - CONTACT=contact@gmail.com
-        - PORT=8080
+        - NAME=$LINK_DOMAIN_DEFAULT
+        - DESCRIPTION=Nostr relay by PastaGringo powered by Fractalnetworks.co
+        - PUBKEY=npub1ky4kxtyg0uxgw8g5p5mmedh8c8s6sqny6zmaaqj44gv4rk0plaus3m4fd2
+        - CONTACT=pastagringo@skiff.com
+        - PORT=8000
         - NIP05=enabled
       volumes:
         - fractal-app-volume:/usr/src/app/db
