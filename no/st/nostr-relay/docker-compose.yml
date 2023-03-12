@@ -5,8 +5,8 @@ services:
         image: pastagringo/nostr-relay-nginx-proxy:latest
         environment:
             LINK_DOMAIN_DEFAULT: $LINK_DOMAIN_DEFAULT        
-    nostr-rs-relay-fractal:
-      container_name: nostr-rs-relay-fractal
+    nostr-relay-fractal:
+      container_name: nostr-relay-fractal
       image: pastagringo/nostr-relay-fractal:tagname
       environment:
         - RELAY_URL=$LINK_DOMAIN_DEFAULT
