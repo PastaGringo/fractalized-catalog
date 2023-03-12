@@ -9,7 +9,7 @@ services:
       container_name: nostr-relay-fractal
       image: pastagringo/nostr-relay-fractal:latest
       environment:
-        - RELAY_URL=$LINK_DOMAIN_DEFAULT
+        - RELAY_URL=wss://$LINK_DOMAIN_DEFAULT
         - NAME=$LINK_DOMAIN_DEFAULT
         - DESCRIPTION=Nostr relay by PastaGringo powered by Fractalnetworks.co
         - PUBKEY=npub1ky4kxtyg0uxgw8g5p5mmedh8c8s6sqny6zmaaqj44gv4rk0plaus3m4fd2
