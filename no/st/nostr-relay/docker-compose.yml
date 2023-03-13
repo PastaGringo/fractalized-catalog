@@ -12,7 +12,7 @@ services:
         - RELAY_URL=wss://$LINK_DOMAIN_DEFAULT
         - NAME=$LINK_DOMAIN_DEFAULT
         - DESCRIPTION=Nostr relay by PastaGringo powered by Fractalnetworks.co
-        - PUBKEY=npub1ky4kxtyg0uxgw8g5p5mmedh8c8s6sqny6zmaaqj44gv4rk0plaus3m4fd2
+        - PUBKEY=b12b632c887f0c871d140d37bcb6e7c1e1a80264d0b7de8255aa1951d9e1ff79
         - CONTACT=pastagringo@skiff.com
         - PORT=8080
         #- NIP05=enabled
