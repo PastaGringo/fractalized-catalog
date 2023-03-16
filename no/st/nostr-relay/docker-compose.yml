@@ -1,8 +1,8 @@
 version: '3.9'
 services:
     nostr-relay-nginx-fractal:
-        container_name: nostr-relay-nginx-fractal
-        image: pastagringo/nostr-relay-nginx-proxy:latest
+        container_name: nostr-nginx-fractal
+        image: pastagringo/nostr-nginx-proxy:latest
         environment:
             LINK_DOMAIN_DEFAULT: $LINK_DOMAIN_DEFAULT        
     nostr-relay-fractal:
