@@ -11,7 +11,7 @@ services:
       environment:
         - RELAY_URL=wss://$LINK_DOMAIN_DEFAULT
         - NAME=$LINK_DOMAIN_DEFAULT
-        - DESCRIPTION=Nostr relay by PastaGringo powered by Fractalnetworks.co
+        - DESCRIPTION="Nostr relay by PastaGringo powered by Fractalnetworks.co"
         - PUBKEY=b12b632c887f0c871d140d37bcb6e7c1e1a80264d0b7de8255aa1951d9e1ff79
         - CONTACT=pastagringo@skiff.com
         - PORT=8080
