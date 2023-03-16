@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-    nostr-relay-nginx-fractal:
+    nostr-nginx-fractal:
         container_name: nostr-nginx-fractal
         image: pastagringo/nostr-nginx-proxy:latest
         environment:
