@@ -24,7 +24,7 @@ services:
       environment:
         LINK: $LINK_DOMAIN_DEFAULT
         TOKEN: $LINK_TOKEN_DEFAULT
-        EXPOSE: nostr-relay-nginx-fractal:80
+        EXPOSE: nostr-nginx-fractal:80
         FRACTAL_API: https://gateway.fractalnetworks.co
       cap_add:
         - NET_ADMIN
