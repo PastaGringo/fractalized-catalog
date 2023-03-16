@@ -19,7 +19,7 @@ services:
 #      volumes:
 #        - fractal-app-volume:/usr/src/app/db
     link:
-      container_name: nostr-rs-relay-fractal-link
+      container_name: nostr-relay-fractal-link
       image: fractalnetworks/link:latest
       environment:
         LINK: $LINK_DOMAIN_DEFAULT
