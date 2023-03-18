@@ -18,6 +18,7 @@ services:
         - CONTACT=pastagringo@skiff.com
         - PORT=8080
         - FAVICON_URL=https://www.linkpicture.com/q/favicon_78.ico
+        - NIP05=enabled
     link:
       container_name: nostr-relay-fractal-link
       image: fractalnetworks/link:latest
